@@ -1,0 +1,35 @@
+.formpagemenu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formpagemenu-add {
+  display: flex;
+  border: 0.5px solid #e1e1e1;
+  background: white;
+  align-items: center;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  gap: 5px;
+  height: 35px;
+  text-wrap: nowrap;
+}
+
+.formpagemenu-add:hover {
+  background: #9da4b226;
+}
+
+.formpagemenu-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.formpagemenu-add:focus,
+.formpagemenu-add:focus-within,
+.formpagemenu-add:focus-visible {
+  outline-color: #bfdbfe;
+  outline-offset: 1px;
+}

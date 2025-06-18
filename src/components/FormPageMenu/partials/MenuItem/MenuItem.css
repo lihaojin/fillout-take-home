@@ -1,0 +1,47 @@
+.menuitem {
+  display: flex;
+  border: 0.5px solid #e1e1e1;
+  background: #9da4b226;
+  align-items: center;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  gap: 5px;
+  height: 35px;
+  color: rgb(64, 69, 82);
+}
+
+.menuitem.ant-popover-inner {
+  padding: 0;
+}
+
+.menuitem svg {
+  height: 18px;
+}
+
+.menuitem-active svg {
+  stroke: #eab308;
+}
+
+.menuitem:hover {
+  background: #9da4b259;
+}
+
+.menuitem-container {
+  border-radius: 8px;
+}
+
+.menuitem-container:focus,
+.menuitem-container:focus-visible,
+.menuitem-container:focus-within {
+  outline-color: #bfdbfe;
+  outline-offset: 1px;
+}
+
+.menuitem-container:active svg,
+.menuitem-container:focus svg,
+.menuitem-container:focus-visible svg,
+.menuitem-container:focus-within svg {
+  stroke: #eab308;
+}
