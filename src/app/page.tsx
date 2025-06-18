@@ -7,6 +7,7 @@ import {
   formOptionsMap,
   FormPagesConfig,
 } from "@/components/FormPageMenu/FormPageMenuTypes";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const { Title } = Typography;
 
@@ -22,11 +23,12 @@ export default function Home() {
   const [formPages, setFormPages] = useState<FormPagesConfig[]>(
     formPagesInitialState
   );
+  const isMobile = useIsMobile();
 
   return (
     <div className="p-10">
       <Title>Phil&apos;s fillout take-home submission</Title>
-      <div className="h-[500px]">
+      <div className={`${isMobile ? "h-[500px]" : "h-[100px] mt-[50px]"}`}>
         <FormPageMenu formPages={formPages} setFormPages={setFormPages} />
       </div>
       <p className="my-6">
@@ -34,7 +36,7 @@ export default function Home() {
         on a menu item. Then hit space to pick up and use left/right arrow keys
         to move it. Hit space again to put it down where you want it to be
         placed. You can also hit enter when a menu item is focused to toggle the
-        settings menu.
+        settings menu. It works on mobile devices/screen sizes as well!
       </p>
       <p>
         I did not get the chance to implement focus trap but that is one thing I
