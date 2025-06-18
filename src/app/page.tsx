@@ -34,6 +34,12 @@ export default function Home() {
         placed. You can also hit enter when a menu item is focused to toggle the
         settings menu.
       </p>
+      <p>
+        I did not get the chance to implement focus trap but that is one thing I
+        would focus on next. I would add a focus trap for all the menus so the
+        user can tab through the options and also exit the focus trap when they
+        want to move to the next menu item.
+      </p>
     </div>
   );
 }
