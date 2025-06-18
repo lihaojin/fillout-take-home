@@ -49,6 +49,8 @@ const MenuItem = ({ pageConfig }: MenuItemProps) => {
     if (event.key === "Enter") {
       setSettingsOpen(!settingsOpen);
     }
+
+    listeners?.onKeyDown?.(event);
   };
 
   return (
@@ -57,6 +59,7 @@ const MenuItem = ({ pageConfig }: MenuItemProps) => {
       ref={setNodeRef}
       style={style}
       {...attributes}
+      {...listeners}
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
       onKeyDown={handleKeyDown}

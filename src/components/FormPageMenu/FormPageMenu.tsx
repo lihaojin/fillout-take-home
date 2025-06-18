@@ -6,6 +6,10 @@ import {
   DragEndEvent,
   UniqueIdentifier,
   closestCorners,
+  useSensor,
+  useSensors,
+  KeyboardSensor,
+  PointerSensor,
 } from "@dnd-kit/core";
 import {
   arrayMove,
@@ -26,6 +30,11 @@ export interface FormPagesMenuProps {
 }
 
 const FormPageMenu = ({ formPages, setFormPages }: FormPagesMenuProps) => {
+  const sensors = useSensors(
+    useSensor(PointerSensor), // mouse / touch support
+    useSensor(KeyboardSensor) // ⌨️ keyboard support
+  );
+
   const getPageIndex = (id: UniqueIdentifier) =>
     formPages.findIndex((page) => page.id === id);
 
@@ -61,7 +70,11 @@ const FormPageMenu = ({ formPages, setFormPages }: FormPagesMenuProps) => {
 
   return (
     <>
-      <DndContext onDragEnd={handleDragEnd} collisionDetection={closestCorners}>
+      <DndContext
+        sensors={sensors}
+        onDragEnd={handleDragEnd}
+        collisionDetection={closestCorners}
+      >
         <SortableContext
           items={formPages}
           strategy={horizontalListSortingStrategy}

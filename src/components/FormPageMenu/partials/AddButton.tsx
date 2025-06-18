@@ -1,6 +1,5 @@
 import { PlusIcon } from "lucide-react";
 import NewFormOptions from "./NewFormOptions";
-import Settings from "./Settings";
 import { useState } from "react";
 import { FormOptionTypes } from "../FormPageMenuTypes";
 
