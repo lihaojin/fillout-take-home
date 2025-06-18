@@ -45,3 +45,9 @@
 .menuitem-container:focus-within svg {
   stroke: #eab308;
 }
+
+@media (max-width: 768px) {
+  .menuitem-container {
+    width: 100%;
+  }
+}

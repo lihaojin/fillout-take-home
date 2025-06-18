@@ -14,6 +14,7 @@ import {
 import {
   arrayMove,
   horizontalListSortingStrategy,
+  verticalListSortingStrategy,
   SortableContext,
 } from "@dnd-kit/sortable";
 import { FormPagesConfig } from "./FormPageMenuTypes";
@@ -21,6 +22,7 @@ import MenuItem from "./partials/MenuItem/MenuItem";
 import Separator from "./partials/Separator/Separator";
 import { formOptionsMap, FormOptionTypes } from "./FormPageMenuTypes";
 import AddButton from "./partials/AddButton";
+import useIsMobile from "@/hooks/useIsMobile";
 
 import "./FormPageMenu.css";
 
@@ -31,7 +33,7 @@ export interface FormPagesMenuProps {
 
 const FormPageMenu = ({ formPages, setFormPages }: FormPagesMenuProps) => {
   const sensors = useSensors(
-    useSensor(PointerSensor), // mouse / touch support
+    useSensor(PointerSensor), // mouse support
     useSensor(KeyboardSensor) // ⌨️ keyboard support
   );
 
@@ -67,6 +69,7 @@ const FormPageMenu = ({ formPages, setFormPages }: FormPagesMenuProps) => {
 
     setFormPages(newPageList);
   };
+  const isMobile = useIsMobile();
 
   return (
     <>
@@ -77,7 +80,11 @@ const FormPageMenu = ({ formPages, setFormPages }: FormPagesMenuProps) => {
       >
         <SortableContext
           items={formPages}
-          strategy={horizontalListSortingStrategy}
+          strategy={
+            isMobile
+              ? verticalListSortingStrategy
+              : horizontalListSortingStrategy
+          }
         >
           <div className="formpagemenu">
             {formPages.map((formPage, index) => {

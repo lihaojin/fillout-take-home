@@ -33,3 +33,19 @@
   outline-color: #bfdbfe;
   outline-offset: 1px;
 }
+
+@media (max-width: 768px) {
+  .formpagemenu-container {
+    height: 100%;
+  }
+
+  .formpagemenu {
+    height: 100%;
+    min-height: 300px;
+  }
+
+  .formpagemenu-container,
+  .formpagemenu {
+    flex-direction: column; /* switch to column on mobile */
+  }
+}

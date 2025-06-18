@@ -27,3 +27,21 @@
 .ant-popover-title {
   margin-bottom: 0 !important;
 }
+
+@media (max-width: 768px) {
+  .separator-btn {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .separator-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .separator-dashedline {
+    border-left: 2px dashed #c0c0c0;
+    height: 100%;
+    width: 1px;
+  }
+}

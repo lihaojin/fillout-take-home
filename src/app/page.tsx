@@ -26,7 +26,9 @@ export default function Home() {
   return (
     <div className="p-10">
       <Title>Phil&apos;s fillout take-home submission</Title>
-      <FormPageMenu formPages={formPages} setFormPages={setFormPages} />
+      <div className="h-[500px]">
+        <FormPageMenu formPages={formPages} setFormPages={setFormPages} />
+      </div>
       <p className="my-6">
         <strong>Note:</strong> To test keyboard accessibility, hit tab to focus
         on a menu item. Then hit space to pick up and use left/right arrow keys
