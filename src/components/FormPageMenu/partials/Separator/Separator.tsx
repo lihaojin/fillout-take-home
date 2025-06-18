@@ -13,7 +13,9 @@ const Separator = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const isMouseDown = useMouseHold();
+  const buttonVisible = menuOpen || isHovered || isFocused;
 
   return (
     <div
@@ -26,20 +28,24 @@ const Separator = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="separator-dashedline"></div>
-      {(menuOpen || isHovered) && (
-        <NewFormOptions
-          isOpen={menuOpen}
-          onOpenChange={(newState) => setMenuOpen(newState)}
-          onClick={(key: FormOptionTypes) => {
-            onClick(key);
-            setMenuOpen(false);
-          }}
+      <NewFormOptions
+        isOpen={menuOpen}
+        onOpenChange={(newState) => setMenuOpen(newState)}
+        onClick={(key: FormOptionTypes) => {
+          onClick(key);
+          setMenuOpen(false);
+        }}
+      >
+        <button
+          className={`separator-btn ${
+            buttonVisible ? "opacity-100" : "opacity-0"
+          }`}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
         >
-          <button className="separator-btn">
-            <PlusCircle className="[&>circle]:stroke-[#E1E1E1] [&>circle]:fill-white w-6 h-6" />
-          </button>
-        </NewFormOptions>
-      )}
+          <PlusCircle className="[&>circle]:stroke-[#E1E1E1] [&>circle]:fill-white w-6 h-6" />
+        </button>
+      </NewFormOptions>
     </div>
   );
 };

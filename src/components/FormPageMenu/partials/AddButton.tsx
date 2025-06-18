@@ -23,7 +23,7 @@ const AddButton = ({
       isOpen={settingsOpen}
       onOpenChange={handleOpenChange}
     >
-      <button className="formpagemenu-add">
+      <button className="formpagemenu-add" tabIndex={0}>
         <PlusIcon size={16} />
         <span>Add Page</span>
       </button>

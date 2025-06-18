@@ -48,6 +48,8 @@ const MenuItem = ({ pageConfig }: MenuItemProps) => {
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === "Enter") {
       setSettingsOpen(!settingsOpen);
+    } else if (event.key === "Escape") {
+      setSettingsOpen(false);
     }
 
     listeners?.onKeyDown?.(event);
