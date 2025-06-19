@@ -24,8 +24,10 @@
   stroke: #eab308;
 }
 
-.menuitem:hover {
-  background: #9da4b259;
+@media (hover: hover) and (pointer: fine) {
+  .menuitem:hover {
+    background: #9da4b259;
+  }
 }
 
 .menuitem-container {
@@ -35,6 +37,7 @@
 .menuitem-container:focus,
 .menuitem-container:focus-visible,
 .menuitem-container:focus-within {
+  background: #9da4b259;
   outline-color: #bfdbfe;
   outline-offset: 1px;
 }
