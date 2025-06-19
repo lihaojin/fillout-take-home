@@ -56,10 +56,6 @@ export default function Home() {
           are rendered
         </List.Item>
         <List.Item>
-          • Edge case: Only allow one dropdown to be open at a time (possibly
-          through onBlur to close a menu)
-        </List.Item>
-        <List.Item>
           • Allow developer to control orientation (vertical/horizontal) through
           a prop if they wish
         </List.Item>

@@ -65,6 +65,7 @@ const MenuItem = ({ pageConfig }: MenuItemProps) => {
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
       onKeyDown={handleKeyDown}
+      onBlur={() => setSettingsOpen(false)}
       tabIndex={0}
     >
       <Settings isOpen={settingsOpen} handleOpenChange={handleOpenChange}>
