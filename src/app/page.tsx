@@ -56,6 +56,11 @@ export default function Home() {
           are rendered
         </List.Item>
         <List.Item>
+          • Edge case: dnd-kit seems to interfere with the listeners for menu
+          item, causing a strange bug in mobile devices where you need to tap
+          twice outside to close a menu.
+        </List.Item>
+        <List.Item>
           • Allow developer to control orientation (vertical/horizontal) through
           a prop if they wish
         </List.Item>

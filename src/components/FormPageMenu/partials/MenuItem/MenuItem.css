@@ -24,7 +24,6 @@
   stroke: #eab308;
 }
 
-.menuitem-container:focus-visible,
 .menuitem-container:hover {
   background: #9da4b259;
 }
