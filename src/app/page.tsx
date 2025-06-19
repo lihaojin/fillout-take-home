@@ -34,9 +34,11 @@ export default function Home() {
       <Paragraph className="my-6">
         <strong>Note:</strong> To test keyboard accessibility, hit tab to focus
         on a menu item. Then hit space to pick up and use left/right arrow keys
-        to move it. Hit space again to put it down where you want it to be
-        placed. You can also hit enter when a menu item is focused to toggle the
-        settings menu. It works on mobile devices/screen sizes as well!
+        to move it when in horizontal orientation. Use up/down arrows on smaller
+        screen sizes where it is in vertical orientation. Hit space again to put
+        it down where you want it to be placed. You can also hit enter when a
+        menu item is focused to toggle the settings menu. It works on mobile
+        devices/screen sizes as well!
       </Paragraph>
       <Paragraph>
         Tap and hold menu item on touch screens, then you will be able to drag
