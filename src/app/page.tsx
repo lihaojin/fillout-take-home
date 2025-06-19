@@ -8,8 +8,8 @@ import {
   FormPagesConfig,
 } from "@/components/FormPageMenu/FormPageMenuTypes";
 import useIsMobile from "@/hooks/useIsMobile";
-
-const { Title } = Typography;
+import { List } from "antd";
+const { Title, Paragraph } = Typography;
 
 const formPagesInitialState = Object.values(formOptionsMap)
   .slice(0, 4)
@@ -31,19 +31,44 @@ export default function Home() {
       <div className={`${isMobile ? "h-[500px]" : "h-[100px] mt-[50px]"}`}>
         <FormPageMenu formPages={formPages} setFormPages={setFormPages} />
       </div>
-      <p className="my-6">
+      <Paragraph className="my-6">
         <strong>Note:</strong> To test keyboard accessibility, hit tab to focus
         on a menu item. Then hit space to pick up and use left/right arrow keys
         to move it. Hit space again to put it down where you want it to be
         placed. You can also hit enter when a menu item is focused to toggle the
         settings menu. It works on mobile devices/screen sizes as well!
-      </p>
-      <p>
+      </Paragraph>
+      <Paragraph>
+        Tap and hold menu item on touch screens, then you will be able to drag
+        and re-order
+      </Paragraph>
+      <Paragraph>
         I did not get the chance to implement focus trap but that is one thing I
         would focus on next. I would add a focus trap for all the menus so the
         user can tab through the options and also exit the focus trap when they
         want to move to the next menu item.
-      </p>
+      </Paragraph>
+      <Title level={5}>List of things to improve if given more time</Title>
+      <List>
+        <List.Item>• Add focus trap for menus</List.Item>
+        <List.Item>
+          • Handle scenario where overflow takes place and too many menu items
+          are rendered
+        </List.Item>
+        <List.Item>
+          • Edge case: Only allow one dropdown to be open at a time (possibly
+          through onBlur to close a menu)
+        </List.Item>
+        <List.Item>
+          • Allow developer to control orientation (vertical/horizontal) through
+          a prop if they wish
+        </List.Item>
+        <List.Item>
+          • Allow developer to inject their own components/buttons to render in
+          a menu item
+        </List.Item>
+        <List.Item>• Add unit tests</List.Item>
+      </List>
     </div>
   );
 }

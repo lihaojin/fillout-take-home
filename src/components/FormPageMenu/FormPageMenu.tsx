@@ -72,42 +72,38 @@ const FormPageMenu = ({ formPages, setFormPages }: FormPagesMenuProps) => {
   const isMobile = useIsMobile();
 
   return (
-    <>
-      <DndContext
-        sensors={sensors}
-        onDragEnd={handleDragEnd}
-        collisionDetection={closestCorners}
+    <DndContext
+      sensors={sensors}
+      onDragEnd={handleDragEnd}
+      collisionDetection={closestCorners}
+    >
+      <SortableContext
+        items={formPages}
+        strategy={
+          isMobile ? verticalListSortingStrategy : horizontalListSortingStrategy
+        }
       >
-        <SortableContext
-          items={formPages}
-          strategy={
-            isMobile
-              ? verticalListSortingStrategy
-              : horizontalListSortingStrategy
-          }
-        >
-          <div className="formpagemenu">
-            {formPages.map((formPage, index) => {
-              return (
-                <div key={formPage.id} className="formpagemenu-container">
-                  <MenuItem pageConfig={formPage} />
-                  <Separator
-                    onClick={(key: FormOptionTypes) =>
-                      handleInsert(key, index + 1)
-                    }
-                  />
-                </div>
-              );
-            })}
-            <AddButton
-              onClick={(key: FormOptionTypes) =>
-                handleInsert(key, formPages.length)
-              }
-            />
-          </div>
-        </SortableContext>
-      </DndContext>
-    </>
+        <div className="formpagemenu">
+          {formPages.map((formPage, index) => {
+            return (
+              <div key={formPage.id} className="formpagemenu-container">
+                <MenuItem pageConfig={formPage} />
+                <Separator
+                  onClick={(key: FormOptionTypes) =>
+                    handleInsert(key, index + 1)
+                  }
+                />
+              </div>
+            );
+          })}
+          <AddButton
+            onClick={(key: FormOptionTypes) =>
+              handleInsert(key, formPages.length)
+            }
+          />
+        </div>
+      </SortableContext>
+    </DndContext>
   );
 };
 
