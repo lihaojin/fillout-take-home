@@ -56,7 +56,7 @@ const MenuItem = ({ pageConfig }: MenuItemProps) => {
   };
 
   return (
-    <div
+    <button
       className="menuitem-container"
       ref={setNodeRef}
       style={style}
@@ -74,7 +74,7 @@ const MenuItem = ({ pageConfig }: MenuItemProps) => {
           <span>{label}</span>
         </div>
       </Settings>
-    </div>
+    </button>
   );
 };
 
