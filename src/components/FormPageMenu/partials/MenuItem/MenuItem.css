@@ -25,7 +25,7 @@
 }
 
 .menuitem-container:focus-visible,
-.menuitem:hover {
+.menuitem-container:hover {
   background: #9da4b259;
 }
 
