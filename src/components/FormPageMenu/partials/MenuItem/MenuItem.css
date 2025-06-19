@@ -24,10 +24,9 @@
   stroke: #eab308;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .menuitem:hover {
-    background: #9da4b259;
-  }
+.menuitem-container:focus-visible,
+.menuitem:hover {
+  background: #9da4b259;
 }
 
 .menuitem-container {
